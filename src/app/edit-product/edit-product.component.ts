@@ -20,14 +20,14 @@ export class EditProductComponent implements OnInit{
   }
     ngOnInit(): void {
     this.productId=this.route.snapshot.params['id'];
-    this.productService.getProductById(this.productId).subscribe({
-      next :(product) =>{
-           this.productFormGroup=this.fb.group({
-             id:this.fb.control (product.id),
-             name:this.fb.control (product.name, [Validators.required]),
-             price:this.fb.control (product.price ,[Validators.min(0)]),
-             checked:this.fb.control (product.checked)
-           });
+      this.productService.getProductById(this.productId).subscribe({
+        next :(product) =>{
+          this.productFormGroup=this.fb.group({
+            id:this.fb.control (product.id),
+            name:this.fb.control (product.name, [Validators.required]),
+            price:this.fb.control (product.price ,[Validators.min(0)]),
+            checked:this.fb.control (product.checked)
+          });
       },
       error:err=>{
         console.log(err)
