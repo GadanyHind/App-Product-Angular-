@@ -10,8 +10,8 @@ import {Product} from "../model/product.model";
   styleUrl: './edit-product.component.css'
 })
 export class EditProductComponent implements OnInit{
-  productId!:number;
-  productFormGroup!: FormGroup;
+  public productId!:number;
+ public productFormGroup!: FormGroup;
   constructor(private route:ActivatedRoute ,
               private productService: ProductService,
               private fb :FormBuilder
